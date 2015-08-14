@@ -1,0 +1,31 @@
+{
+  "name": "vfe-gulp-cli",
+  "version": "1.0.0",
+  "description": "Mock gulp cli of vfe.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/switer/vfe-gulp-cli.git"
+  },
+  "keywords": [
+    "vfe",
+    "gulp",
+    "cli"
+  ],
+  "author": "switer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/switer/vfe-gulp-cli/issues"
+  },
+  "homepage": "https://github.com/switer/vfe-gulp-cli",
+  "dependencies": {
+    "chalk": "^1.1.0",
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.6",
+    "pretty-hrtime": "^1.0.0",
+    "resolve": "^1.1.6"
+  }
+}
