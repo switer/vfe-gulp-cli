@@ -1,6 +1,6 @@
 {
   "name": "vfe-gulp-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mock gulp cli of vfe.",
   "main": "index.js",
   "scripts": {
@@ -27,5 +27,8 @@
     "gulp-util": "^3.0.6",
     "pretty-hrtime": "^1.0.0",
     "resolve": "^1.1.6"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
   }
 }
