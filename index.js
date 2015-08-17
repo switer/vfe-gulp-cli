@@ -5,6 +5,7 @@ var chalk = require('chalk')
 var resolve = require('resolve')
 var prettyTime = require('pretty-hrtime')
 
+var failed = false
 // Format orchestrator errors
 function formatError(e) {
     if (!e.err) {
