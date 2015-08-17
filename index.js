@@ -5,6 +5,23 @@ var chalk = require('chalk')
 var resolve = require('resolve')
 var prettyTime = require('pretty-hrtime')
 
+// Format orchestrator errors
+function formatError(e) {
+    if (!e.err) {
+        return e.message
+    }
+    // PluginError
+    if (typeof e.err.showStack === 'boolean') {
+        return e.err.toString()
+    }
+    // Normal error
+    if (e.err.stack) {
+        return e.err.stack
+    }
+    // Unknown (string, number, etc.)
+    return new Error(String(e.err)).stack
+}
+        
 module.exports = function () {
 
     var gulp = require(resolve.sync('gulp', {
@@ -24,22 +41,6 @@ module.exports = function () {
         gutil.log('Starting', '\'' + chalk.cyan(e.task) + '\'...')
     })
     gulp.on('task_stop', function(e) {
-        // Format orchestrator errors
-        function formatError(e) {
-            if (!e.err) {
-                return e.message
-            }
-            // PluginError
-            if (typeof e.err.showStack === 'boolean') {
-                return e.err.toString()
-            }
-            // Normal error
-            if (e.err.stack) {
-                return e.err.stack
-            }
-            // Unknown (string, number, etc.)
-            return new Error(String(e.err)).stack
-        }
 
         var time = prettyTime(e.hrDuration)
         gutil.log(
